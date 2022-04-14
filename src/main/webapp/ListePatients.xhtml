@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      
+      > 
+      
+
+<h:head> 
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></link>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script><script src="js/bootstrap.min.js"></script> 
+
+<link rel="stylesheet" type="text/css" href="xhtmlcss.css" />
+<title>e-psy</title>
+</h:head>  
+<h:body> 
+<div class="list1">
+        <div><a href="#logo"><img src="images/E-psy_.png" width="110px" height="110px" style="margin-left: 30px;margin-top: -15px;margin-bottom: 50px;"></img></a></div>
+       
+       
+ 
+        <div class="dropdown">
+        <div class="droite">
+  <img src="images/admin_logo.png" width="50px" height="50px" id="admin"  onclick="myFunction()" class="dropbtn"></img>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="display.jsp"><i class="fa fa-sign-out" style="font-size:20px;color:#ffbd1f"></i> Profil</a>
+    <a href="#"><i class="fa fa-user" style="font-size:20px;color:#ffbd1f"></i> Se déconnecter</a>
+    
+  </div>
+</div>
+    
+  </div>
+  </div>
+<h:form id="form">
+
+
+    <div class="card crud-demo" style="margin-top: 100px;margin-left: 50px;margin-right: 50px">
+        
+
+
+        <p:dataTable value="#{data.data2}" var="car"  >
+          
+
+            <p:column headerText="Username" sortBy="#{car.code}" filterBy="#{car.code}" >
+                <h:outputText value="#{car.code}"/>
+            </p:column>
+            <p:column headerText="Nom" sortBy="#{car.nom}" filterBy="#{car.nom}">
+                <h:outputText value="#{car.nom}"/>
+            </p:column>
+           <p:column headerText="Prenom"  sortBy="#{car.prenom}" filterBy="#{car.prenom}">
+                <h:outputText value="#{car.prenom}"/>
+            </p:column>
+       <p:column exportable="false">
+               <h:commandButton action="Profil"
+			value="Voir  Profil"  actionListener = "#{datapsy.send}" style="padding-left:40px;padding-right:40px">
+			<f:attribute name="id1" value="#{car.id}" /> 
+			<f:attribute name="username" value="#{car.nom}" /> 
+			<f:attribute name="prenom1" value="#{car.prenom}" />
+			<f:attribute name="code1" value="#{car.code}" /> 
+			<f:attribute name="age1" value="#{car.age}" /> 
+			<f:attribute name="ville1" value="#{car.ville}" /> 
+			<f:attribute name="email1" value="#{car.email}" /> 
+			<f:attribute name="contact1" value="#{car.contact}" /> 
+			<f:attribute name="contacturgence1" value="#{car.contacturgence}" /> 
+			<f:attribute name="sexe1" value="#{car.sexe}" /> 
+			<f:attribute name="etatcivil1" value="#{car.etatcivil}" /> 
+			<f:attribute name="ddc1" value="#{car.ddc}" /> 
+			<f:attribute name="med1" value="#{car.med}" /> 
+			<f:attribute name="notes1" value="#{car.notes}" /> 
+			<f:attribute name="diag1" value="#{car.diag}" /> 
+			</h:commandButton>
+			
+            </p:column>
+        </p:dataTable>
+        
+
+      
+    </div>
+</h:form>
+</h:body>  
+
+</html>

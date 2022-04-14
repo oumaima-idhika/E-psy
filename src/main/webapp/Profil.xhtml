@@ -1,0 +1,140 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+<link rel="stylesheet" type="text/css" href="xhtmlcss.css" />
+	<title>e-psy</title>
+</h:head>
+<h:body>
+
+<div class="card" style="color:grey">
+
+<h:form>
+<div style="display: flex;justify-content: center">
+<img  src="images\admin_logo.png" width="110px" height="110px"></img>
+</div>
+      <div style="display: flex;justify-content: center">
+      <h2 style="color:#00c4cc">Informations Personnelles</h2>
+      </div>
+      <div style="display: flex;justify-content: space-around">
+      <div >
+      <div style="display:flex;">
+      <p >Nom : 
+     
+        <h:inputText value="#{datapsy.username}" rendered="#{datapsy.editable}" class="input-xhtml" />
+      </p> 
+    
+      </div>
+       <div style="display:flex ;">
+      <p >Username: 
+     
+        <h:inputText value="#{datapsy.code1}" rendered="#{datapsy.editable}" class="input-xhtml" />
+      </p> 
+      
+      </div>
+      <div style="display:flex ;">
+      <p>Sexe :
+        <h:inputText value="#{datapsy.sexe1}" rendered="#{datapsy.editable}" class="input-xhtml" />
+      </p>
+      
+      </div>
+      <div style="display:flex ;">
+      <p >Email : 
+        <h:inputText value="#{datapsy.email1}" rendered="#{datapsy.editable}" class="input-xhtml" />
+      </p>
+     
+      </div>
+      <div style="display:flex ;">
+      <p >Contact: 
+        <h:inputText value="#{datapsy.contact1}" rendered="#{datapsy.editable}" class="input-xhtml" />
+      </p>
+     
+      </div>
+      </div>
+      <div >
+      <div style="display:flex;">
+        <p >Prenom : 
+        <h:inputText value="#{datapsy.prenom1}" rendered="#{datapsy.editable}" class="input-xhtml" />
+      </p>
+      </div>
+      <div style="display:flex;">
+      <p >Age :
+      
+        <h:inputText value="#{datapsy.age1}" rendered="#{datapsy.editable}" class="input-xhtml" /></p></div>
+      <div style="display:flex;">
+      <p>Etat civil: 
+        <h:inputText value="#{datapsy.etatcivil1}" rendered="#{datapsy.editable}" class="input-xhtml" />
+       </p></div>
+       <div style="display:flex;">
+        <p >Ville :
+        <h:inputText value="#{datapsy.ville1}" rendered="#{datapsy.editable}" class="input-xhtml" />
+      </p></div>
+      <div style="display:flex;">
+       <p >Contact d'urgence: 
+        <h:inputText value="#{datapsy.contacturgence1}" rendered="#{datapsy.editable}" class="input-xhtml" />
+      </p>
+      </div>
+      </div>
+      </div>
+      <div style="display: flex;justify-content: center">
+      <h2 style="color:#00c4cc">Informations Medicales</h2>
+      </div>
+      <div style="display: flex;justify-content: space-around">
+      <div>
+      <div style="display:flex;">
+      <p >Diagnostic :
+      
+        <h:inputText value="#{datapsy.diag1}" rendered="#{datapsy.editable}" class="input-xhtml" /></p></div>
+      <div style="display:flex;">
+      <p>Medicaments: 
+        <h:inputText value="#{datapsy.med1}" rendered="#{datapsy.editable}" class="input-xhtml" />
+       </p></div>
+      
+      </div>
+      <div>
+      <div style="display:flex;">
+      <p >Date de derniere modification:
+      
+        <h:inputText value="#{datapsy.ddc1}" rendered="#{datapsy.editable}" class="input-xhtml" /></p></div>
+      <div style="display:flex;">
+      <p>notes: 
+        <h:inputText value="#{datapsy.notes1}" rendered="#{datapsy.editable}" class="input-xhtml" />
+       </p></div>
+      
+      
+      </div>
+      
+      </div>
+      
+      
+      
+  <div style="display: flex;justify-content: center;margin-top:50px">
+        <h:commandButton value="Enregistrer" action="#{datapsy.updatepatients()}" rendered="#{not datapsy.edit()}"  style="margin-right:10px" class="form_butt" />
+        
+        <h:commandButton value="Supprimer" type="button"  onclick="PF('dlg3').show()" style="margin-right:10px" class="form_butt" />
+        <p:dialog header="Header" widgetVar="dlg3" minHeight="40" width="350" showEffect="fade">
+      <p class="p-m-0">Voulez-vous vraiment supprimer le patient <span>#{datapsy.username} #{datapsy.prenom1}</span></p>
+    <f:facet name="footer">
+       
+        <h:commandButton value="oui" action="#{datapsy.deletepatient()}" class="form_butt" />
+        
+    </f:facet>
+</p:dialog>
+<h:commandButton value="visualiser" type="button"  onclick="PF('dlg4').show()" style="margin-right:10px" class="form_butt" />
+<p:dialog header="Visualisation" widgetVar="dlg4" height="400" width="900" showEffect="fade">
+     <p:dataGrid  value="#{datapsy.model}" var="chars">
+  <p:panel>
+  <p:chart type="line" model="#{chars}"  style="margin-left:10px" />
+    </p:panel>
+   
+   </p:dataGrid>
+</p:dialog>
+<h:commandButton value="Retour" action="#{datapsy.retourpage()}"  class="form_butt" />
+</div>
+   </h:form>
+   </div>
+	
+</h:body>
+</html>

@@ -1,0 +1,325 @@
+@charset "ISO-8859-1";
+body{
+    margin:0;
+    
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    
+ background-image: url("images/bg.png");
+
+
+}
+
+li{
+    list-style: none;
+    margin:20px;
+    margin-right: 30px;
+}
+
+.ord{
+    display: flex;
+    flex-direction:row;
+    
+   
+    
+}
+.fa-caret-down{
+    float: top;
+    margin-left: 5px;
+    
+    color: gray;
+    
+}
+.list1{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    box-shadow: 2px 0 10px #e4e9ea;
+    height: 80px;
+    background-color: white;
+    z-index: 2;
+}
+.list{
+    margin-left: 200px;
+    margin-top: 0;
+    
+}
+
+ 
+ /* button{
+      
+    color:white;
+    padding: 10px;
+    cursor:pointer;
+    border: none;
+    border-radius: 10px;
+    width:100px;
+    height: 45px;
+    transition-duration: 0.5s;
+    background-image: linear-gradient(to right, #22577E 0%, #5584AC  51%, #95D1CC  100%);
+    outline: none;
+    background-size: 200% auto;
+
+    
+    
+      
+}
+button:hover{
+    background-position: right center;
+    
+   
+    text-decoration: none;
+  }*/
+ 
+.droite{
+  margin-top: 15px;
+  margin-right: 20px;
+ 
+
+ 
+}
+.admin{
+    cursor: pointer;
+   
+}
+.admin:hover{
+    border-radius: 50%;
+    background-color: rgb(240, 240, 240);
+}
+.card1{
+    cursor: pointer;
+    
+   
+
+}
+
+.card1:hover{
+    background-color: rgb(240, 240, 240);
+}
+#formulaire {
+    margin-top: 150px;
+    width: 700px;
+
+}
+.form_butt{
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    padding: 8px;
+    margin: 5px;
+    background-color: #00c4cc;
+    color: white;
+    cursor: pointer;
+    width: 100px;
+
+}
+.form_butt:hover{
+    background-color: gray;
+}
+#form_butts{
+    text-align: center;
+    margin: 50px;
+}
+a, a:hover, a:focus, a:active{
+  color: black;
+  text-decoration: none;
+  
+}
+
+
+
+
+
+
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+	right: 1rem;
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 180px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size:14px;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+
+.notification-box {
+  position: fixed;
+  z-index: 99;
+  top: 25px;
+  right: 120px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  
+}
+#bell{
+	font-size:32px;
+	color:#00c4cc
+}
+.notification-box:hover{
+	
+	cursor:pointer;
+}
+#bell:hover {
+	
+	cursor:pointer;
+	color:gray;
+	font-size:36px;
+}
+
+
+.notification-count {
+  position: absolute;
+  z-index: 1;
+  top: -6px;
+  right: -6px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 15px;
+  border-radius: 50%;
+  background-color: #ff4927;
+  color: #fff;
+}
+
+#chatbox{
+	width:400px;
+	
+	background:#fff;
+	border-radius:6px;
+	overflow:hidden;
+	height:550px;
+	position:absolute;
+	top:100px;
+	left:50%;
+	
+}
+
+#friendslist{
+	position:absolute;
+	top:0;
+	left:0;
+	width:400px;
+	height:300px;
+}
+#topmenu{
+	height:69px;
+	width:400px;
+	border-bottom:1px solid #d8dfe3;	
+}
+#topmenu span{
+	float:left;	
+	width: 96px;
+    height: 70px;
+    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/top-menu.png") -3px -118px no-repeat;
+    color: #00c4cc;
+}
+#topmenu span.friends{margin-bottom:-1px;}
+#topmenu span.chats{background-position:-95px 25px; cursor:pointer;}
+#topmenu span.chats:hover{background-position:-95px -46px; cursor:pointer;}
+#topmenu span.history{background-position:-190px 24px; cursor:pointer;}
+#topmenu span.history:hover{background-position:-190px -47px; cursor:pointer;}
+.friend{
+	height:110px;
+	border-bottom:1px solid #e7ebee;		
+	position:relative;
+}
+.friend:hover{
+	
+	cursor:pointer;
+}
+.friend img{
+	width:40px;
+	border-radius:50%;
+	margin:15px;
+	float:left;
+}
+.floatingImg{
+	width:40px;
+	border-radius:50%;
+	position:absolute;
+	top:0;
+	left:12px;
+	border:3px solid #fff;
+}
+.friend p{
+	padding:15px 0 0 0;			
+	float:left;
+	width:220px;
+}
+.friend p strong{
+  font-weight:600;
+  font-size:15px;
+	color:#597a96;  
+
+}
+.friend p span{
+	font-size:13px;
+	font-weight:400;
+	color:#aab8c2;
+}
+.friend .status{
+
+	position:absolute;
+	top:31px;
+	right:17px;
+}
+.friend .temps{
+
+	position:absolute;
+	top:90px;
+	right:15px;
+	font-size:10px;
+	color:#ddd;
+}
+.friend .status.inactive{background:#eaeef0;}
+#search{
+	background:#e3e9ed url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/search.png") -11px 0 no-repeat;
+	height:60px;
+	width:290px;
+	position:absolute;
+	bottom:0;
+	left:0;
+}
+#friends{
+	 overflow: auto;
+	 height:400px;
+	 width:400px
+}
+
+.eye{
+	 border: none;
+ background:none;
+ outline: none;
+	
+}
+.input-xhtml{
+	height:35px;border: none;outline: none;border-bottom:solid 1px #00c4cc;margin-right:15px
+}

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+
+<servlet>
+<servlet-name>Home</servlet-name>
+<servlet-class>main.Home</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>Home</servlet-name>
+<url-pattern>/Home</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+<servlet-name>Test</servlet-name>
+<servlet-class>main.Test</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>Test</servlet-name>
+<url-pattern>/Test</url-pattern>
+</servlet-mapping>
+
+  <servlet>
+    <servlet-name>Faces Servlet</servlet-name> 
+    <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+    
+  </servlet>
+   <servlet>
+    <servlet-name>Login</servlet-name>
+    <servlet-class>servlets.LoginServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Message</servlet-name>
+    <servlet-class>servlets.MessageServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Questionnaire</servlet-name>
+    <servlet-class>servlets.getQst</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Info</servlet-name>
+    <servlet-class>servlets.InfoServlet</servlet-class>
+  </servlet>
+  
+  
+  <servlet-mapping>
+    <servlet-name>Faces Servlet</servlet-name>
+    <url-pattern>*.jsf</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Faces Servlet</servlet-name>
+    <url-pattern>*.faces</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Faces Servlet</servlet-name>
+    <url-pattern>*.xhtml</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Login</servlet-name>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Questionnaire</servlet-name>
+    <url-pattern>/Questionnaire</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Info</servlet-name>
+    <url-pattern>/info</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Message</servlet-name>
+    <url-pattern>/contact</url-pattern>
+  </servlet-mapping>
+  
+  
+</web-app>
